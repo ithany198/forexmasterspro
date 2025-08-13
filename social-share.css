@@ -1,0 +1,454 @@
+/* Social Media Sharing Styles */
+
+/* Social Share Buttons for Content */
+.social-share-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.share-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #8691a8;
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.share-buttons {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.share-btn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.share-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Platform-specific colors */
+.share-btn.facebook {
+    background: #1877F2;
+    color: white;
+}
+
+.share-btn.facebook:hover {
+    background: #166FE5;
+}
+
+.share-btn.twitter {
+    background: #1DA1F2;
+    color: white;
+}
+
+.share-btn.twitter:hover {
+    background: #1991DB;
+}
+
+.share-btn.linkedin {
+    background: #0A66C2;
+    color: white;
+}
+
+.share-btn.linkedin:hover {
+    background: #095BAE;
+}
+
+.share-btn.telegram {
+    background: #0088CC;
+    color: white;
+}
+
+.share-btn.telegram:hover {
+    background: #007AB8;
+}
+
+.share-btn.whatsapp {
+    background: #25D366;
+    color: white;
+}
+
+.share-btn.whatsapp:hover {
+    background: #22C45E;
+}
+
+.share-btn.reddit {
+    background: #FF4500;
+    color: white;
+}
+
+.share-btn.reddit:hover {
+    background: #E63E00;
+}
+
+.share-btn.copy {
+    background: #667eea;
+    color: white;
+}
+
+.share-btn.copy:hover {
+    background: #5a6fd8;
+}
+
+.share-btn.more {
+    background: #4a5568;
+    color: white;
+}
+
+.share-btn.more:hover {
+    background: #3a475a;
+}
+
+/* Floating Share Widget */
+.floating-share-widget {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.floating-share-toggle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    transition: all 0.3s ease;
+    font-size: 18px;
+}
+
+.floating-share-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.floating-share-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.floating-share-widget.active .floating-share-buttons {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+
+.floating-share-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.floating-share-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Apply platform colors to floating buttons */
+.floating-share-btn.facebook { background: #1877F2; color: white; }
+.floating-share-btn.twitter { background: #1DA1F2; color: white; }
+.floating-share-btn.linkedin { background: #0A66C2; color: white; }
+.floating-share-btn.telegram { background: #0088CC; color: white; }
+.floating-share-btn.whatsapp { background: #25D366; color: white; }
+
+/* Share Modal */
+.share-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 10000;
+    backdrop-filter: blur(4px);
+}
+
+.share-modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #1e222d;
+    border-radius: 16px;
+    padding: 0;
+    max-width: 500px;
+    width: 90%;
+    border: 1px solid #3a3e4a;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.share-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid #3a3e4a;
+}
+
+.share-modal-header h3 {
+    color: #d1d4dc;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.share-modal-close {
+    font-size: 24px;
+    color: #8691a8;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.share-modal-close:hover {
+    color: #d1d4dc;
+}
+
+.share-modal-body {
+    padding: 24px;
+}
+
+.share-url-section {
+    margin-bottom: 24px;
+}
+
+.share-url-section label {
+    display: block;
+    color: #8691a8;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.url-copy-container {
+    display: flex;
+    gap: 8px;
+}
+
+.url-copy-container input {
+    flex: 1;
+    padding: 12px;
+    background: #2a2e39;
+    border: 1px solid #3a3e4a;
+    border-radius: 8px;
+    color: #d1d4dc;
+    font-size: 14px;
+    font-family: 'Courier New', monospace;
+}
+
+.url-copy-container button {
+    padding: 12px 16px;
+    background: #667eea;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.url-copy-container button:hover {
+    background: #5a6fd8;
+}
+
+.share-platforms-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.platform-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 12px;
+    background: #2a2e39;
+    border: 1px solid #3a3e4a;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: #d1d4dc;
+}
+
+.platform-btn:hover {
+    background: #363a45;
+    border-color: #4a6cf7;
+    transform: translateY(-2px);
+}
+
+.platform-btn i {
+    font-size: 20px;
+}
+
+.platform-btn span {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Platform-specific hover colors */
+.platform-btn.facebook:hover { border-color: #1877F2; }
+.platform-btn.facebook:hover i { color: #1877F2; }
+
+.platform-btn.twitter:hover { border-color: #1DA1F2; }
+.platform-btn.twitter:hover i { color: #1DA1F2; }
+
+.platform-btn.linkedin:hover { border-color: #0A66C2; }
+.platform-btn.linkedin:hover i { color: #0A66C2; }
+
+.platform-btn.telegram:hover { border-color: #0088CC; }
+.platform-btn.telegram:hover i { color: #0088CC; }
+
+.platform-btn.whatsapp:hover { border-color: #25D366; }
+.platform-btn.whatsapp:hover i { color: #25D366; }
+
+.platform-btn.reddit:hover { border-color: #FF4500; }
+.platform-btn.reddit:hover i { color: #FF4500; }
+
+.platform-btn.pinterest:hover { border-color: #E60023; }
+.platform-btn.pinterest:hover i { color: #E60023; }
+
+.platform-btn.discord:hover { border-color: #5865F2; }
+.platform-btn.discord:hover i { color: #5865F2; }
+
+.platform-btn.email:hover { border-color: #34495e; }
+.platform-btn.email:hover i { color: #34495e; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .floating-share-widget {
+        right: 15px;
+    }
+    
+    .floating-share-toggle {
+        width: 45px;
+        height: 45px;
+        font-size: 16px;
+    }
+    
+    .floating-share-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 12px;
+    }
+    
+    .share-modal-content {
+        width: 95%;
+        margin: 20px;
+    }
+    
+    .share-platforms-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .social-share-buttons {
+        flex-wrap: wrap;
+    }
+    
+    .share-buttons {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .share-platforms-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .social-share-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .share-label {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+}
+
+/* Hide floating widget on very small screens */
+@media (max-width: 480px) {
+    .floating-share-widget {
+        display: none;
+    }
+}
+
+/* Animation for share button interactions */
+.share-btn:active {
+    transform: translateY(0) scale(0.95);
+}
+
+.floating-share-btn:active {
+    transform: scale(1.05);
+}
+
+/* Tooltip styles for floating buttons */
+.floating-share-btn::before {
+    content: attr(title);
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 10001;
+}
+
+.floating-share-btn:hover::before {
+    opacity: 1;
+}
+

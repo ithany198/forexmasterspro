@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Dashboard - ForexMaster Pro</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../pages-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo -->
+                <div class="logo">
+                    <div class="logo-icon">FMP</div>
+                    <div class="logo-text">
+                        <span class="logo-main">ForexMaster</span>
+                        <span class="logo-sub">Pro</span>
+                    </div>
+                </div>
+
+                <!-- Navigation Menu -->
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="../index.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-link active">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="education.html" class="nav-link">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Education Hub</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="community.html" class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Community Forum</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="signals.html" class="nav-link">
+                            <i class="fas fa-brain"></i>
+                            <span>AI Signals</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="tools.html" class="nav-link">
+                            <i class="fas fa-tools"></i>
+                            <span>Trading Tools</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="research.html" class="nav-link">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Research</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="blog.html" class="nav-link">
+                            <i class="fas fa-blog"></i>
+                            <span>Blog</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Auth Buttons -->
+                <div class="auth-buttons">
+                    <button class="btn btn-login" onclick="openLoginModal()">
+                        <i class="fas fa-sign-in-alt"></i>
+                        Login
+                    </button>
+                    <button class="btn btn-trading" onclick="openSignupModal()">
+                        Start Trading
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Content -->
+    <main class="page-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <span><i class="fas fa-chevron-right"></i></span>
+                    <span>Dashboard</span>
+                </div>
+                <h1 class="page-title">
+                    <i class="fas fa-chart-line"></i>
+                    Trading Dashboard
+                </h1>
+                <p class="page-subtitle">
+                    Real-time trading data, portfolio management, and advanced analytics
+                </p>
+            </div>
+        </section>
+
+        <!-- Dashboard Stats -->
+        <section class="container">
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-number">$125,847</div>
+                    <div class="stat-label">Portfolio Value</div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i> +$3,247 (2.65%)
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">87.4%</div>
+                    <div class="stat-label">Win Rate</div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i> +2.1%
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24</div>
+                    <div class="stat-label">Active Trades</div>
+                    <div class="stat-change neutral">
+                        <i class="fas fa-minus"></i> No change
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$4,287</div>
+                    <div class="stat-label">Daily P&L</div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i> +$847
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Content Grid -->
+        <section class="container">
+            <div class="content-grid">
+                <!-- Real-Time Market Data -->
+                <div class="content-card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="card-title">Real-Time Market Data</h3>
+                    <p class="card-description">
+                        Live streaming prices for forex, stocks, commodities, and cryptocurrencies with millisecond precision.
+                    </p>
+                    <div class="card-meta">
+                        <span><i class="fas fa-clock"></i> Real-time</span>
+                        <span><i class="fas fa-globe"></i> Global Markets</span>
+                    </div>
+                    <div class="card-action">
+                        <a href="dashboard/market-data.html" class="btn-card">
+                            View Markets <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Portfolio Management -->
+                <div class="content-card">
+                    <div class="card-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="card-title">Portfolio Management</h3>
+                    <p class="card-description">
+                        Comprehensive portfolio tracking with advanced analytics, risk assessment, and performance metrics.
+                    </p>
+                    <div class="card-meta">
+                        <span><i class="fas fa-chart-pie"></i> 15 Holdings</span>
+                        <span><i class="fas fa-percentage"></i> 12.4% Return</span>
+                    </div>
+                    <div class="card-action">
+                        <a href="dashboard/portfolio.html" class="btn-card">
+                            Manage Portfolio <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Trade Execution -->
+                <div class="content-card">
+                    <div class="card-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3 class="card-title">Trade Execution</h3>
+                    <p class="card-description">
+                        Execute trades instantly with our advanced order management system and smart order routing.
+                    </p>
+                    <div class="card-meta">
+                        <span><i class="fas fa-bolt"></i> Instant Execution</span>
+                        <span><i class="fas fa-shield-alt"></i> Secure</span>
+                    </div>
+                    <div class="card-action">
+                        <a href="dashboard/trading.html" class="btn-card">
+                            Start Trading <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Risk Management -->
+                <div class="content-card">
+                    <div class="card-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="card-title">Risk Management</h3>
+                    <p class="card-description">
+                        Advanced risk controls, position sizing, and automated stop-loss management to protect your capital.
+                    </p>
+                    <div class="card-meta">
+                        <span><i class="fas fa-exclamation-triangle"></i> Low Risk</span>
+                        <span><i class="fas fa-percentage"></i> 2.1% Max DD</span>
+                    </div>
+                    <div class="card-action">
+                        <a href="dashboard/risk.html" class="btn-card">
+                            View Risk <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Technical Analysis -->
+                <div class="content-card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 class="card-title">Advanced Trading Chart</h3>
+                    <p class="card-description">
+                        Professional TradingView-style charting with 50+ indicators, Pine Script editor, and advanced drawing tools.
+                    </p>
+                    <div class="card-meta">
+                        <span><i class="fas fa-tools"></i> 50+ Indicators</span>
+                        <span><i class="fas fa-code"></i> Pine Script</span>
+                    </div>
+                    <div class="card-action">
+                        <a href="chart.html" class="btn-card">
+                            Open Chart Platform <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- News & Analysis -->
+                <div class="content-card">
+                    <div class="card-icon">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <h3 class="card-title">Market News & Analysis</h3>
+                    <p class="card-description">
+                        Real-time financial news, expert analysis, and market sentiment indicators from global sources.
+                    </p>
+                    <div class="card-meta">
+                        <span><i class="fas fa-clock"></i> Real-time</span>
+                        <span><i class="fas fa-globe"></i> Global Sources</span>
+                    </div>
+                    <div class="card-action">
+                        <a href="dashboard/news.html" class="btn-card">
+                            Read News <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- AI Trading Signals -->
+                <div class="content-card">
+                    <div class="card-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="card-title">AI Trading Signals</h3>
+                    <p class="card-description">
+                        Machine learning powered trading signals with 85% accuracy rate and real-time notifications.
+                    </p>
+                    <div class="card-meta">
+                        <span><i class="fas fa-percentage"></i> 85% Accuracy</span>
+                        <span><i class="fas fa-bell"></i> Real-time Alerts</span>
+                    </div>
+                    <div class="card-action">
+                        <a href="dashboard/signals.html" class="btn-card">
+                            View Signals <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Backtesting Engine -->
+                <div class="content-card">
+                    <div class="card-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h3 class="card-title">Strategy Backtesting</h3>
+                    <p class="card-description">
+                        Test your trading strategies against historical data with our powerful backtesting engine.
+                    </p>
+                    <div class="card-meta">
+                        <span><i class="fas fa-database"></i> 10 Years Data</span>
+                        <span><i class="fas fa-rocket"></i> Fast Processing</span>
+                    </div>
+                    <div class="card-action">
+                        <a href="dashboard/backtest.html" class="btn-card">
+                            Run Backtest <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Economic Calendar -->
+                <div class="content-card">
+                    <div class="card-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3 class="card-title">Economic Calendar</h3>
+                    <p class="card-description">
+                        Stay ahead of market-moving events with our comprehensive economic calendar and impact analysis.
+                    </p>
+                    <div class="card-meta">
+                        <span><i class="fas fa-clock"></i> Live Updates</span>
+                        <span><i class="fas fa-exclamation-circle"></i> Impact Levels</span>
+                    </div>
+                    <div class="card-action">
+                        <a href="dashboard/calendar.html" class="btn-card">
+                            View Calendar <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Performance Analytics -->
+                <div class="content-card">
+                    <div class="card-icon">
+                        <i class="fas fa-analytics"></i>
+                    </div>
+                    <h3 class="card-title">Performance Analytics</h3>
+                    <p class="card-description">
+                        Deep dive into your trading performance with advanced metrics, reports, and benchmarking.
+                    </p>
+                    <div class="card-meta">
+                        <span><i class="fas fa-chart-line"></i> Detailed Reports</span>
+                        <span><i class="fas fa-medal"></i> Benchmarking</span>
+                    </div>
+                    <div class="card-action">
+                        <a href="dashboard/analytics.html" class="btn-card">
+                            View Analytics <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Social Trading -->
+                <div class="content-card">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="card-title">Social Trading</h3>
+                    <p class="card-description">
+                        Follow successful traders, copy their strategies, and share your own trading insights with the community.
+                    </p>
+                    <div class="card-meta">
+                        <span><i class="fas fa-star"></i> Top Traders</span>
+                        <span><i class="fas fa-copy"></i> Copy Trading</span>
+                    </div>
+                    <div class="card-action">
+                        <a href="dashboard/social.html" class="btn-card">
+                            Explore Social <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile Trading -->
+                <div class="content-card">
+                    <div class="card-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="card-title">Mobile Trading</h3>
+                    <p class="card-description">
+                        Trade on the go with our mobile app featuring full functionality and real-time synchronization.
+                    </p>
+                    <div class="card-meta">
+                        <span><i class="fas fa-download"></i> iOS & Android</span>
+                        <span><i class="fas fa-sync"></i> Real-time Sync</span>
+                    </div>
+                    <div class="card-action">
+                        <a href="dashboard/mobile.html" class="btn-card">
+                            Download App <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Trade Panel -->
+        <section class="container">
+            <div class="chart-container">
+                <h3 class="chart-title">
+                    <i class="fas fa-bolt"></i>
+                    Quick Trade Panel
+                </h3>
+                <div class="data-table">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Pair</th>
+                                <th>Price</th>
+                                <th>Change</th>
+                                <th>Signal</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>EUR/USD</strong></td>
+                                <td>1.0875</td>
+                                <td style="color: #5cb85c;">+0.21%</td>
+                                <td><span class="signal-indicator signal-buy">BUY</span></td>
+                                <td><button class="btn-card">Trade</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>GBP/USD</strong></td>
+                                <td>1.2634</td>
+                                <td style="color: #ff4757;">-0.36%</td>
+                                <td><span class="signal-indicator signal-sell">SELL</span></td>
+                                <td><button class="btn-card">Trade</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>USD/JPY</strong></td>
+                                <td>149.82</td>
+                                <td style="color: #5cb85c;">+0.45%</td>
+                                <td><span class="signal-indicator signal-hold">HOLD</span></td>
+                                <td><button class="btn-card">Trade</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>BTC/USD</strong></td>
+                                <td>$45,230</td>
+                                <td style="color: #5cb85c;">+2.82%</td>
+                                <td><span class="signal-indicator signal-buy">BUY</span></td>
+                                <td><button class="btn-card">Trade</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <!-- Company Info -->
+                    <div class="footer-column">
+                        <div class="footer-logo">
+                            <div class="logo-icon">FMP</div>
+                            <div class="logo-text">
+                                <span class="logo-main">ForexMaster Pro</span>
+                            </div>
+                        </div>
+                        <p class="footer-description">
+                            The ultimate trading ecosystem with 5000+ resources and 50,000+ community members.
+                        </p>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="footer-column">
+                        <h4 class="footer-title">Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                            <li><a href="dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                            <li><a href="education.html"><i class="fas fa-graduation-cap"></i> Education Hub</a></li>
+                            <li><a href="community.html"><i class="fas fa-users"></i> Community Forum</a></li>
+                            <li><a href="signals.html"><i class="fas fa-brain"></i> AI Signals</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Resources -->
+                    <div class="footer-column">
+                        <h4 class="footer-title">Resources</h4>
+                        <ul class="footer-links">
+                            <li><a href="tools.html"><i class="fas fa-tools"></i> Trading Tools</a></li>
+                            <li><a href="research.html"><i class="fas fa-chart-bar"></i> Market Research</a></li>
+                            <li><a href="blog.html"><i class="fas fa-blog"></i> Trading Blog</a></li>
+                            <li><a href="support/mobile-apps.html"><i class="fas fa-mobile-alt"></i> Mobile Apps</a></li>
+                            <li><a href="support/ebooks.html"><i class="fas fa-book"></i> Ebooks & Guides</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Support -->
+                    <div class="footer-column">
+                        <h4 class="footer-title">Support</h4>
+                        <ul class="footer-links">
+                            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+                            <li><a href="support/live-chat.html"><i class="fas fa-comments"></i> Live Chat</a></li>
+                            <li><a href="support/help-center.html"><i class="fas fa-question-circle"></i> Help Center</a></li>
+                            <li><a href="support/bug-reports.html"><i class="fas fa-bug"></i> Bug Reports</a></li>
+                            <li><a href="support/feature-requests.html"><i class="fas fa-lightbulb"></i> Feature Requests</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 ForexMaster Pro. All rights reserved. | 5000+ Resources | 50,000+ Members | 15,247+ Posts</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

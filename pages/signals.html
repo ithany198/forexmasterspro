@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trading Signals - ForexMaster Pro</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../pages-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo -->
+                <div class="logo">
+                    <div class="logo-icon">FMP</div>
+                    <div class="logo-text">
+                        <span class="logo-main">ForexMaster</span>
+                        <span class="logo-sub">Pro</span>
+                    </div>
+                </div>
+
+                <!-- Navigation Menu -->
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="../index.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-link">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="education.html" class="nav-link">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Education Hub</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="community.html" class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Community Forum</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="signals.html" class="nav-link active">
+                            <i class="fas fa-brain"></i>
+                            <span>AI Signals</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="tools.html" class="nav-link">
+                            <i class="fas fa-tools"></i>
+                            <span>Trading Tools</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="research.html" class="nav-link">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Research</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="blog.html" class="nav-link">
+                            <i class="fas fa-blog"></i>
+                            <span>Blog</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Auth Buttons -->
+                <div class="auth-buttons">
+                    <button class="btn btn-login" onclick="openLoginModal()">
+                        <i class="fas fa-sign-in-alt"></i>
+                        Login
+                    </button>
+                    <button class="btn btn-trading" onclick="openSignupModal()">
+                        Start Trading
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Content -->
+    <main class="page-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <span><i class="fas fa-chevron-right"></i></span>
+                    <span>AI Trading Signals</span>
+                </div>
+                <h1 class="page-title">
+                    <i class="fas fa-brain"></i>
+                    AI Trading Signals
+                </h1>
+                <p class="page-subtitle">
+                    Advanced machine learning algorithms delivering 85% accuracy with 500+ daily signals
+                </p>
+            </div>
+        </section>
+
+        <!-- Signals Performance Stats -->
+        <section class="container">
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-number">87.4%</div>
+                    <div class="stat-label">Signal Accuracy</div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i> +2.1% this month
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">542</div>
+                    <div class="stat-label">Daily Signals</div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i> +47 today
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3.2:1</div>
+                    <div class="stat-label">Avg Risk:Reward</div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i> Excellent ratio
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Real-time Alerts</div>
+                    <div class="stat-change neutral">
+                        <i class="fas fa-clock"></i> Always active
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Active Signals -->
+        <section class="container">
+            <div class="chart-container">
+                <h3 class="chart-title">
+                    <i class="fas fa-bolt"></i>
+                    Live Trading Signals
+                </h3>
+                <div class="data-table">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Pair/Asset</th>
+                                <th>Signal</th>
+                                <th>Entry</th>
+                                <th>Stop Loss</th>
+                                <th>Take Profit</th>
+                                <th>R:R</th>
+                                <th>Confidence</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>EUR/USD</strong></td>
+                                <td><span class="signal-indicator signal-buy">BUY</span></td>
+                                <td>1.0875</td>
+                                <td>1.0845</td>
+                                <td>1.0935</td>
+                                <td>2.0:1</td>
+                                <td>89%</td>
+                                <td>2 min ago</td>
+                            </tr>
+                            <tr>
+                                <td><strong>GBP/JPY</strong></td>
+                                <td><span class="signal-indicator signal-sell">SELL</span></td>
+                                <td>189.45</td>
+                                <td>190.15</td>
+                                <td>187.75</td>
+                                <td>2.4:1</td>
+                                <td>92%</td>
+                                <td>5 min ago</td>
+                            </tr>
+                            <tr>
+                                <td><strong>BTC/USD</strong></td>
+                                <td><span class="signal-indicator signal-buy">BUY</span></td>
+                                <td>$45,230</td>
+                                <td>$44,680</td>
+                                <td>$46,890</td>
+                                <td>3.0:1</td>
+                                <td>85%</td>
+                                <td>7 min ago</td>
+                            </tr>
+                            <tr>
+                                <td><strong>GOLD</strong></td>
+                                <td><span class="signal-indicator signal-hold">HOLD</span></td>
+                                <td>$1,987</td>
+                                <td>$1,975</td>
+                                <td>$2,015</td>
+                                <td>2.3:1</td>
+                                <td>78%</td>
+                                <td>12 min ago</td>
+                            </tr>
+                            <tr>
+                                <td><strong>USD/JPY</strong></td>
+                                <td><span class="signal-indicator signal-sell">SELL</span></td>
+                                <td>149.82</td>
+                                <td>150.45</td>
+                                <td>148.35</td>
+                                <td>2.3:1</td>
+                                <td>91%</td>
+                                <td>15 min ago</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Signal Types -->
+        <section class="container">
+            <div class="content-grid">
+                <!-- Forex Signals -->
+                <div class="content-card">
+                    <div class="card-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3 class="card-title">Forex Signals</h3>
+                    <p class="card-description">
+                        Major and minor currency pairs with high-probability setups using advanced technical analysis and sentiment data.
+                    </p>
+                    <div class="card-meta">
+                        <span><i class="fas fa-percentage"></i> 89% accuracy</span>
+                        <span><i class="fas fa-clock"></i> 200+ daily signals</span>
+                    </div>
+                    <div class="card-action">
+                        <a href="signals/forex.html" class="btn-card">
+                            View Forex Signals <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Crypto Signals -->
+                <div class="content-card">
+                    <div class="card-icon">
+                        <i class="fab fa-bitcoin"></i>
+                    </div>
+                    <h3 class="card-title">Cryptocurrency Signals</h3>
+                    <p class="card-description">
+                        Bitcoin, Ethereum, and altcoin trading signals using on-chain analysis and market sentiment indicators.
+                    </p>
+                    <div class="card-meta">
+                        <span><i class="fas fa-percentage"></i> 83% accuracy</span>
+                        <span><i class="fas fa-clock"></i> 150+ daily signals</span>
+                    </div>
+                    <div class="card-action">
+                        <a href="signals/crypto.html" class="btn-card">
+                            View Crypto Signals <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Stock Signals -->
+                <div class="content-card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="card-title">Stock Market Signals</h3>
+                    <p class="card-description">
+                        S&P 500, NASDAQ, and individual stock signals with earnings analysis and sector rotation insights.
+                    </p>
+                    <div class="card-meta">
+                        <span><i class="fas fa-percentage"></i> 86% accuracy</span>
+                        <span><i class="fas fa-clock"></i> 120+ daily signals</span>
+                    </div>
+                    <div class="card-action">
+                        <a href="signals/stocks.html" class="btn-card">
+                            View Stock Signals <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Commodities Signals -->
+                <div class="content-card">
+                    <div class="card-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3 class="card-title">Commodities Signals</h3>
+                    <p class="card-description">
+                        Gold, silver, oil, and agricultural commodities with supply-demand analysis and geopolitical factors.
+                    </p>
+                    <div class="card-meta">
+                        <span><i class="fas fa-percentage"></i> 84% accuracy</span>
+                        <span><i class="fas fa-clock"></i> 80+ daily signals</span>
+                    </div>
+                    <div class="card-action">
+                        <a href="signals/commodities.html" class="btn-card">
+                            View Commodity Signals <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Options Signals -->
+                <div class="content-card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3 class="card-title">Options Trading Signals</h3>
+                    <p class="card-description">
+                        High-probability options strategies including spreads, straddles, and directional plays with Greeks analysis.
+                    </p>
+                    <div class="card-meta">
+                        <span><i class="fas fa-percentage"></i> 91% accuracy</span>
+                        <span><i class="fas fa-clock"></i> 50+ daily signals</span>
+                    </div>
+                    <div class="card-action">
+                        <a href="signals/options.html" class="btn-card">
+                            View Options Signals <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Index Signals -->
+                <div class="content-card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-area"></i>
+                    </div>
+                    <h3 class="card-title">Index Trading Signals</h3>
+                    <p class="card-description">
+                        Major indices including S&P 500, NASDAQ, DAX, and FTSE with macro-economic correlation analysis.
+                    </p>
+                    <div class="card-meta">
+                        <span><i class="fas fa-percentage"></i> 88% accuracy</span>
+                        <span><i class="fas fa-clock"></i> 60+ daily signals</span>
+                    </div>
+                    <div class="card-action">
+                        <a href="signals/indices.html" class="btn-card">
+                            View Index Signals <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Scalping Signals -->
+                <div class="content-card">
+                    <div class="card-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="card-title">Scalping Signals</h3>
+                    <p class="card-description">
+                        Ultra-fast signals for scalpers with 1-5 minute timeframes and instant notification system.
+                    </p>
+                    <div class="card-meta">
+                        <span><i class="fas fa-percentage"></i> 82% accuracy</span>
+                        <span><i class="fas fa-clock"></i> 300+ daily signals</span>
+                    </div>
+                    <div class="card-action">
+                        <a href="signals/scalping.html" class="btn-card">
+                            View Scalping Signals <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Swing Trading Signals -->
+                <div class="content-card">
+                    <div class="card-icon">
+                        <i class="fas fa-trending-up"></i>
+                    </div>
+                    <h3 class="card-title">Swing Trading Signals</h3>
+                    <p class="card-description">
+                        Medium-term signals for swing traders with 4-hour to daily timeframes and comprehensive analysis.
+                    </p>
+                    <div class="card-meta">
+                        <span><i class="fas fa-percentage"></i> 90% accuracy</span>
+                        <span><i class="fas fa-clock"></i> 40+ daily signals</span>
+                    </div>
+                    <div class="card-action">
+                        <a href="signals/swing.html" class="btn-card">
+                            View Swing Signals <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- News-Based Signals -->
+                <div class="content-card">
+                    <div class="card-icon">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <h3 class="card-title">News-Based Signals</h3>
+                    <p class="card-description">
+                        Signals triggered by major economic events, earnings releases, and market-moving news with impact analysis.
+                    </p>
+                    <div class="card-meta">
+                        <span><i class="fas fa-percentage"></i> 85% accuracy</span>
+                        <span><i class="fas fa-clock"></i> Event-driven</span>
+                    </div>
+                    <div class="card-action">
+                        <a href="signals/news.html" class="btn-card">
+                            View News Signals <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Sentiment Signals -->
+                <div class="content-card">
+                    <div class="card-icon">
+                        <i class="fas fa-heart-pulse"></i>
+                    </div>
+                    <h3 class="card-title">Market Sentiment Signals</h3>
+                    <p class="card-description">
+                        AI-powered sentiment analysis from social media, news, and trader positioning data for contrarian plays.
+                    </p>
+                    <div class="card-meta">
+                        <span><i class="fas fa-percentage"></i> 87% accuracy</span>
+                        <span><i class="fas fa-clock"></i> 70+ daily signals</span>
+                    </div>
+                    <div class="card-action">
+                        <a href="signals/sentiment.html" class="btn-card">
+                            View Sentiment Signals <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- AI Pattern Recognition -->
+                <div class="content-card">
+                    <div class="card-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="card-title">AI Pattern Recognition</h3>
+                    <p class="card-description">
+                        Machine learning algorithms detecting complex chart patterns and price formations with high accuracy.
+                    </p>
+                    <div class="card-meta">
+                        <span><i class="fas fa-percentage"></i> 93% accuracy</span>
+                        <span><i class="fas fa-clock"></i> 90+ daily signals</span>
+                    </div>
+                    <div class="card-action">
+                        <a href="signals/patterns.html" class="btn-card">
+                            View Pattern Signals <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Multi-Timeframe Signals -->
+                <div class="content-card">
+                    <div class="card-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3 class="card-title">Multi-Timeframe Analysis</h3>
+                    <p class="card-description">
+                        Comprehensive signals using multiple timeframe confirmation from 1-minute to monthly charts.
+                    </p>
+                    <div class="card-meta">
+                        <span><i class="fas fa-percentage"></i> 89% accuracy</span>
+                        <span><i class="fas fa-clock"></i> 110+ daily signals</span>
+                    </div>
+                    <div class="card-action">
+                        <a href="signals/multi-timeframe.html" class="btn-card">
+                            View MTF Signals <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Signal Performance -->
+        <section class="container">
+            <div class="chart-container">
+                <h3 class="chart-title">
+                    <i class="fas fa-chart-line"></i>
+                    Monthly Signal Performance
+                </h3>
+                <div class="content-list">
+                    <div class="list-item">
+                        <div class="list-title">
+                            <i class="fas fa-trophy"></i>
+                            January 2024 Performance
+                        </div>
+                        <div class="list-description">
+                            1,247 signals generated with 89.2% accuracy rate. Average R:R ratio of 2.8:1. Total profit: +14,567 pips.
+                        </div>
+                        <div class="list-meta">
+                            <span><i class="fas fa-percentage"></i> 89.2% accuracy</span>
+                            <span><i class="fas fa-chart-line"></i> +14,567 pips</span>
+                            <span><i class="fas fa-balance-scale"></i> 2.8:1 R:R</span>
+                        </div>
+                    </div>
+
+                    <div class="list-item">
+                        <div class="list-title">
+                            <i class="fas fa-medal"></i>
+                            February 2024 Performance
+                        </div>
+                        <div class="list-description">
+                            1,456 signals generated with 91.4% accuracy rate. Average R:R ratio of 3.1:1. Total profit: +18,923 pips.
+                        </div>
+                        <div class="list-meta">
+                            <span><i class="fas fa-percentage"></i> 91.4% accuracy</span>
+                            <span><i class="fas fa-chart-line"></i> +18,923 pips</span>
+                            <span><i class="fas fa-balance-scale"></i> 3.1:1 R:R</span>
+                        </div>
+                    </div>
+
+                    <div class="list-item">
+                        <div class="list-title">
+                            <i class="fas fa-star"></i>
+                            March 2024 Performance
+                        </div>
+                        <div class="list-description">
+                            1,389 signals generated with 87.8% accuracy rate. Average R:R ratio of 2.9:1. Total profit: +16,234 pips.
+                        </div>
+                        <div class="list-meta">
+                            <span><i class="fas fa-percentage"></i> 87.8% accuracy</span>
+                            <span><i class="fas fa-chart-line"></i> +16,234 pips</span>
+                            <span><i class="fas fa-balance-scale"></i> 2.9:1 R:R</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <!-- Company Info -->
+                    <div class="footer-column">
+                        <div class="footer-logo">
+                            <div class="logo-icon">FMP</div>
+                            <div class="logo-text">
+                                <span class="logo-main">ForexMaster Pro</span>
+                            </div>
+                        </div>
+                        <p class="footer-description">
+                            The ultimate trading ecosystem with 5000+ resources and 50,000+ community members.
+                        </p>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="footer-column">
+                        <h4 class="footer-title">Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                            <li><a href="dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                            <li><a href="education.html"><i class="fas fa-graduation-cap"></i> Education Hub</a></li>
+                            <li><a href="community.html"><i class="fas fa-users"></i> Community Forum</a></li>
+                            <li><a href="signals.html"><i class="fas fa-brain"></i> AI Signals</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Resources -->
+                    <div class="footer-column">
+                        <h4 class="footer-title">Resources</h4>
+                        <ul class="footer-links">
+                            <li><a href="tools.html"><i class="fas fa-tools"></i> Trading Tools</a></li>
+                            <li><a href="research.html"><i class="fas fa-chart-bar"></i> Market Research</a></li>
+                            <li><a href="blog.html"><i class="fas fa-blog"></i> Trading Blog</a></li>
+                            <li><a href="support/mobile-apps.html"><i class="fas fa-mobile-alt"></i> Mobile Apps</a></li>
+                            <li><a href="support/ebooks.html"><i class="fas fa-book"></i> Ebooks & Guides</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Support -->
+                    <div class="footer-column">
+                        <h4 class="footer-title">Support</h4>
+                        <ul class="footer-links">
+                            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+                            <li><a href="support/live-chat.html"><i class="fas fa-comments"></i> Live Chat</a></li>
+                            <li><a href="support/help-center.html"><i class="fas fa-question-circle"></i> Help Center</a></li>
+                            <li><a href="support/bug-reports.html"><i class="fas fa-bug"></i> Bug Reports</a></li>
+                            <li><a href="support/feature-requests.html"><i class="fas fa-lightbulb"></i> Feature Requests</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 ForexMaster Pro. All rights reserved. | 5000+ Resources | 50,000+ Members | 15,247+ Posts</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
+

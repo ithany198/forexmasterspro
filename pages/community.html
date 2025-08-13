@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Forum - ForexMaster Pro</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../pages-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo -->
+                <div class="logo">
+                    <div class="logo-icon">FMP</div>
+                    <div class="logo-text">
+                        <span class="logo-main">ForexMaster</span>
+                        <span class="logo-sub">Pro</span>
+                    </div>
+                </div>
+
+                <!-- Navigation Menu -->
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="../index.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-link">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="education.html" class="nav-link">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Education Hub</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="community.html" class="nav-link active">
+                            <i class="fas fa-users"></i>
+                            <span>Community Forum</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="signals.html" class="nav-link">
+                            <i class="fas fa-brain"></i>
+                            <span>AI Signals</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="tools.html" class="nav-link">
+                            <i class="fas fa-tools"></i>
+                            <span>Trading Tools</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="research.html" class="nav-link">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Research</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="blog.html" class="nav-link">
+                            <i class="fas fa-blog"></i>
+                            <span>Blog</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Auth Buttons -->
+                <div class="auth-buttons">
+                    <button class="btn btn-login" onclick="openLoginModal()">
+                        <i class="fas fa-sign-in-alt"></i>
+                        Login
+                    </button>
+                    <button class="btn btn-trading" onclick="openSignupModal()">
+                        Start Trading
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Content -->
+    <main class="page-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <span><i class="fas fa-chevron-right"></i></span>
+                    <span>Community Forum</span>
+                </div>
+                <h1 class="page-title">
+                    <i class="fas fa-users"></i>
+                    Community Forum
+                </h1>
+                <p class="page-subtitle">
+                    Connect with 50,000+ active traders, share strategies, and learn from the community
+                </p>
+            </div>
+        </section>
+
+        <!-- Search and Filters -->
+        <section class="container">
+            <div class="search-filters">
+                <div class="search-section">
+                    <input type="text" id="forumSearch" placeholder="Search topics..." onkeypress="if(event.key==='Enter') searchForum()">
+                    <button onclick="searchForum()"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="forum-categories"></div>
+            </div>
+        </section>
+
+        <!-- Community Stats -->
+        <section class="container">
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-number">52,847</div>
+                    <div class="stat-label">Active Members</div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i> +1,247 this week
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">18,934</div>
+                    <div class="stat-label">Forum Posts</div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i> +384 today
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4,567</div>
+                    <div class="stat-label">Active Discussions</div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i> +89 this hour
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Community Support</div>
+                    <div class="stat-change neutral">
+                        <i class="fas fa-clock"></i> Always active
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Forum Categories & Latest Discussions -->
+        <section class="container">
+            <div class="content-list">
+                <!-- Discussion 1: EUR/USD Analysis -->
+                <div class="forum-thread">
+                    <div class="thread-header">
+                        <div class="thread-avatar">MT</div>
+                        <div class="thread-info">
+                            <h4>EUR/USD Technical Analysis - Bullish Breakout Alert</h4>
+                            <div class="thread-meta">
+                                <span>Posted by <strong>MarketTrader_Pro</strong></span>
+                                <span>•</span>
+                                <span>2 hours ago</span>
+                                <span>•</span>
+                                <span>Technical Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="thread-content">
+                        EUR/USD has broken above the key resistance level at 1.0850. The momentum indicators are showing strong bullish signals with RSI at 68 and MACD crossing above signal line. Target levels: 1.0920, 1.0980. Stop loss at 1.0810.
+                    </div>
+                    <div class="thread-stats">
+                        <span><i class="fas fa-thumbs-up"></i> 47 likes</span>
+                        <span><i class="fas fa-comment"></i> 23 replies</span>
+                        <span><i class="fas fa-eye"></i> 1,247 views</span>
+                        <span><i class="fas fa-clock"></i> Last reply 15 min ago</span>
+                    </div>
+                </div>
+
+                <!-- Discussion 2: Risk Management -->
+                <div class="forum-thread">
+                    <div class="thread-header">
+                        <div class="thread-avatar">RM</div>
+                        <div class="thread-info">
+                            <h4>Risk Management Strategy: The 2% Rule Explained</h4>
+                            <div class="thread-meta">
+                                <span>Posted by <strong>RiskMaster_84</strong></span>
+                                <span>•</span>
+                                <span>4 hours ago</span>
+                                <span>•</span>
+                                <span>Risk Management</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="thread-content">
+                        Many new traders struggle with position sizing. The 2% rule is fundamental: never risk more than 2% of your account on a single trade. Here's how to calculate position sizes and implement this strategy effectively...
+                    </div>
+                    <div class="thread-stats">
+                        <span><i class="fas fa-thumbs-up"></i> 89 likes</span>
+                        <span><i class="fas fa-comment"></i> 34 replies</span>
+                        <span><i class="fas fa-eye"></i> 2,156 views</span>
+                        <span><i class="fas fa-clock"></i> Last reply 28 min ago</span>
+                    </div>
+                </div>
+
+                <!-- Discussion 3: Bitcoin Analysis -->
+                <div class="forum-thread">
+                    <div class="thread-header">
+                        <div class="thread-avatar">CT</div>
+                        <div class="thread-info">
+                            <h4>Bitcoin Surge Past $45K - What's Next?</h4>
+                            <div class="thread-meta">
+                                <span>Posted by <strong>CryptoTrader_99</strong></span>
+                                <span>•</span>
+                                <span>6 hours ago</span>
+                                <span>•</span>
+                                <span>Cryptocurrency</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="thread-content">
+                        Bitcoin's institutional buying pressure continues as it breaks $45,000. Key resistance at $47,500 and $50,000. The on-chain metrics show strong accumulation by whales. Thoughts on the next major move?
+                    </div>
+                    <div class="thread-stats">
+                        <span><i class="fas fa-thumbs-up"></i> 156 likes</span>
+                        <span><i class="fas fa-comment"></i> 67 replies</span>
+                        <span><i class="fas fa-eye"></i> 3,847 views</span>
+                        <span><i class="fas fa-clock"></i> Last reply 5 min ago</span>
+                    </div>
+                </div>
+
+                <!-- Discussion 4: Trading Psychology -->
+                <div class="forum-thread">
+                    <div class="thread-header">
+                        <div class="thread-avatar">TP</div>
+                        <div class="thread-info">
+                            <h4>Overcoming Trading Psychology Challenges</h4>
+                            <div class="thread-meta">
+                                <span>Posted by <strong>TradingPsych_Expert</strong></span>
+                                <span>•</span>
+                                <span>8 hours ago</span>
+                                <span>•</span>
+                                <span>Trading Psychology</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="thread-content">
+                        Fear and greed are the biggest enemies of successful trading. I've compiled 10 proven techniques to maintain emotional discipline during volatile market conditions. These have helped me achieve consistent profitability...
+                    </div>
+                    <div class="thread-stats">
+                        <span><i class="fas fa-thumbs-up"></i> 203 likes</span>
+                        <span><i class="fas fa-comment"></i> 45 replies</span>
+                        <span><i class="fas fa-eye"></i> 4,523 views</span>
+                        <span><i class="fas fa-clock"></i> Last reply 12 min ago</span>
+                    </div>
+                </div>
+
+                <!-- Discussion 5: Forex News Impact -->
+                <div class="forum-thread">
+                    <div class="thread-header">
+                        <div class="thread-avatar">FN</div>
+                        <div class="thread-info">
+                            <h4>Fed Meeting Minutes - USD Impact Analysis</h4>
+                            <div class="thread-meta">
+                                <span>Posted by <strong>ForexNews_Trader</strong></span>
+                                <span>•</span>
+                                <span>10 hours ago</span>
+                                <span>•</span>
+                                <span>Fundamental Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="thread-content">
+                        The Fed minutes revealed dovish sentiment regarding future rate hikes. USD pairs are showing mixed reactions. DXY testing support at 103.50. Key levels to watch for major USD pairs in the coming sessions...
+                    </div>
+                    <div class="thread-stats">
+                        <span><i class="fas fa-thumbs-up"></i> 78 likes</span>
+                        <span><i class="fas fa-comment"></i> 29 replies</span>
+                        <span><i class="fas fa-eye"></i> 1,967 views</span>
+                        <span><i class="fas fa-clock"></i> Last reply 22 min ago</span>
+                    </div>
+                </div>
+
+                <!-- Discussion 6: Options Strategy -->
+                <div class="forum-thread">
+                    <div class="thread-header">
+                        <div class="thread-avatar">OS</div>
+                        <div class="thread-info">
+                            <h4>Iron Condor Strategy for SPY - High Probability Setup</h4>
+                            <div class="thread-meta">
+                                <span>Posted by <strong>OptionsSpecialist</strong></span>
+                                <span>•</span>
+                                <span>12 hours ago</span>
+                                <span>•</span>
+                                <span>Options Trading</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="thread-content">
+                        Setting up an Iron Condor on SPY with 85% probability of profit. Selling the 430/435 call spread and 420/415 put spread. 21 DTE with expected range between 415-435. Max profit $200, max loss $300...
+                    </div>
+                    <div class="thread-stats">
+                        <span><i class="fas fa-thumbs-up"></i> 67 likes</span>
+                        <span><i class="fas fa-comment"></i> 31 replies</span>
+                        <span><i class="fas fa-eye"></i> 1,456 views</span>
+                        <span><i class="fas fa-clock"></i> Last reply 37 min ago</span>
+                    </div>
+                </div>
+
+                <!-- Discussion 7: Algorithmic Trading -->
+                <div class="forum-thread">
+                    <div class="thread-header">
+                        <div class="thread-avatar">AT</div>
+                        <div class="thread-info">
+                            <h4>Python Trading Bot Performance Update - 18% Monthly Return</h4>
+                            <div class="thread-meta">
+                                <span>Posted by <strong>AlgoTrader_Dev</strong></span>
+                                <span>•</span>
+                                <span>14 hours ago</span>
+                                <span>•</span>
+                                <span>Algorithmic Trading</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="thread-content">
+                        My momentum-based trading algorithm achieved 18.3% return this month with a 2.4% max drawdown. Using RSI divergence and volume confirmation signals. Sharing the backtest results and key optimizations made...
+                    </div>
+                    <div class="thread-stats">
+                        <span><i class="fas fa-thumbs-up"></i> 234 likes</span>
+                        <span><i class="fas fa-comment"></i> 89 replies</span>
+                        <span><i class="fas fa-eye"></i> 5,678 views</span>
+                        <span><i class="fas fa-clock"></i> Last reply 8 min ago</span>
+                    </div>
+                </div>
+
+                <!-- Discussion 8: Swing Trading Setup -->
+                <div class="forum-thread">
+                    <div class="thread-header">
+                        <div class="thread-avatar">ST</div>
+                        <div class="thread-info">
+                            <h4>Weekly Swing Trading Watchlist - 5 High-Probability Setups</h4>
+                            <div class="thread-meta">
+                                <span>Posted by <strong>SwingTrader_Pro</strong></span>
+                                <span>•</span>
+                                <span>16 hours ago</span>
+                                <span>•</span>
+                                <span>Swing Trading</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="thread-content">
+                        This week's swing trading opportunities: AAPL breaking resistance, TSLA pullback to support, Gold testing key levels, and two forex setups with excellent risk-reward ratios. Entry points and targets included...
+                    </div>
+                    <div class="thread-stats">
+                        <span><i class="fas fa-thumbs-up"></i> 145 likes</span>
+                        <span><i class="fas fa-comment"></i> 52 replies</span>
+                        <span><i class="fas fa-eye"></i> 2,789 views</span>
+                        <span><i class="fas fa-clock"></i> Last reply 18 min ago</span>
+                    </div>
+                </div>
+
+                <!-- Discussion 9: Economic Calendar -->
+                <div class="forum-thread">
+                    <div class="thread-header">
+                        <div class="thread-avatar">EC</div>
+                        <div class="thread-info">
+                            <h4>This Week's High-Impact Economic Events</h4>
+                            <div class="thread-meta">
+                                <span>Posted by <strong>EconomicCalendar_Watch</strong></span>
+                                <span>•</span>
+                                <span>18 hours ago</span>
+                                <span>•</span>
+                                <span>Economic Calendar</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="thread-content">
+                        Key events this week: US GDP (Wednesday), ECB Interest Rate Decision (Thursday), NFP (Friday). Historical data shows average pip movements and best trading strategies for each event. Prepare your positions...
+                    </div>
+                    <div class="thread-stats">
+                        <span><i class="fas fa-thumbs-up"></i> 89 likes</span>
+                        <span><i class="fas fa-comment"></i> 27 replies</span>
+                        <span><i class="fas fa-eye"></i> 1,634 views</span>
+                        <span><i class="fas fa-clock"></i> Last reply 42 min ago</span>
+                    </div>
+                </div>
+
+                <!-- Discussion 10: Day Trading Journal -->
+                <div class="forum-thread">
+                    <div class="thread-header">
+                        <div class="thread-avatar">DT</div>
+                        <div class="thread-info">
+                            <h4>Day Trading Journal - Week 32 Results (+$4,567)</h4>
+                            <div class="thread-meta">
+                                <span>Posted by <strong>DayTrader_Alpha</strong></span>
+                                <span>•</span>
+                                <span>20 hours ago</span>
+                                <span>•</span>
+                                <span>Day Trading</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="thread-content">
+                        Sharing my weekly trading journal with detailed trade analysis. 23 trades, 17 winners, 6 losers. Best performing setups: breakout trades and gap fills. Key lessons learned and areas for improvement...
+                    </div>
+                    <div class="thread-stats">
+                        <span><i class="fas fa-thumbs-up"></i> 312 likes</span>
+                        <span><i class="fas fa-comment"></i> 78 replies</span>
+                        <span><i class="fas fa-eye"></i> 4,234 views</span>
+                        <span><i class="fas fa-clock"></i> Last reply 3 min ago</span>
+                    </div>
+                </div>
+
+                <!-- Discussion 11: Market Sentiment -->
+                <div class="forum-thread">
+                    <div class="thread-header">
+                        <div class="thread-avatar">MS</div>
+                        <div class="thread-info">
+                            <h4>Market Sentiment Analysis - COT Report Insights</h4>
+                            <div class="thread-meta">
+                                <span>Posted by <strong>MarketSentiment_Guru</strong></span>
+                                <span>•</span>
+                                <span>22 hours ago</span>
+                                <span>•</span>
+                                <span>Market Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="thread-content">
+                        Latest COT report shows significant changes in positioning. Commercial traders are heavily short USD while large speculators are long. This divergence often signals trend reversals. Historical analysis included...
+                    </div>
+                    <div class="thread-stats">
+                        <span><i class="fas fa-thumbs-up"></i> 56 likes</span>
+                        <span><i class="fas fa-comment"></i> 19 replies</span>
+                        <span><i class="fas fa-eye"></i> 987 views</span>
+                        <span><i class="fas fa-clock"></i> Last reply 55 min ago</span>
+                    </div>
+                </div>
+
+                <!-- Discussion 12: Trading Platform Tips -->
+                <div class="forum-thread">
+                    <div class="thread-header">
+                        <div class="thread-avatar">TP</div>
+                        <div class="thread-info">
+                            <h4>MetaTrader 5 Expert Advisor Development Tutorial</h4>
+                            <div class="thread-meta">
+                                <span>Posted by <strong>TradingPlatform_Expert</strong></span>
+                                <span>•</span>
+                                <span>1 day ago</span>
+                                <span>•</span>
+                                <span>Trading Platforms</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="thread-content">
+                        Complete guide to developing Expert Advisors in MT5. From basic MQL5 syntax to advanced trading strategies. Includes downloadable templates and best practices for backtesting and optimization...
+                    </div>
+                    <div class="thread-stats">
+                        <span><i class="fas fa-thumbs-up"></i> 178 likes</span>
+                        <span><i class="fas fa-comment"></i> 43 replies</span>
+                        <span><i class="fas fa-eye"></i> 3,456 views</span>
+                        <span><i class="fas fa-clock"></i> Last reply 1 hour ago</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Forum Categories -->
+        <section class="container">
+            <div class="chart-container">
+                <h3 class="chart-title">
+                    <i class="fas fa-list"></i>
+                    Forum Categories
+                </h3>
+                <div class="content-grid">
+                    <div class="content-card">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="card-title">Technical Analysis</h3>
+                        <p class="card-description">
+                            Chart analysis, indicators, patterns, and price action discussions
+                        </p>
+                        <div class="card-meta">
+                            <span><i class="fas fa-comment"></i> 4,567 posts</span>
+                            <span><i class="fas fa-eye"></i> 89,234 views</span>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <div class="card-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3 class="card-title">Fundamental Analysis</h3>
+                        <p class="card-description">
+                            Economic news, market events, and fundamental trading strategies
+                        </p>
+                        <div class="card-meta">
+                            <span><i class="fas fa-comment"></i> 2,847 posts</span>
+                            <span><i class="fas fa-eye"></i> 56,789 views</span>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <div class="card-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="card-title">Risk Management</h3>
+                        <p class="card-description">
+                            Position sizing, stop losses, and capital preservation strategies
+                        </p>
+                        <div class="card-meta">
+                            <span><i class="fas fa-comment"></i> 1,967 posts</span>
+                            <span><i class="fas fa-eye"></i> 34,567 views</span>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <div class="card-icon">
+                            <i class="fab fa-bitcoin"></i>
+                        </div>
+                        <h3 class="card-title">Cryptocurrency</h3>
+                        <p class="card-description">
+                            Bitcoin, altcoins, DeFi, and crypto trading strategies
+                        </p>
+                        <div class="card-meta">
+                            <span><i class="fas fa-comment"></i> 3,456 posts</span>
+                            <span><i class="fas fa-eye"></i> 78,234 views</span>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <div class="card-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3 class="card-title">Algorithmic Trading</h3>
+                        <p class="card-description">
+                            Automated trading, backtesting, and quantitative strategies
+                        </p>
+                        <div class="card-meta">
+                            <span><i class="fas fa-comment"></i> 1,234 posts</span>
+                            <span><i class="fas fa-eye"></i> 23,456 views</span>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <div class="card-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="card-title">Trading Psychology</h3>
+                        <p class="card-description">
+                            Mental discipline, emotional control, and mindset development
+                        </p>
+                        <div class="card-meta">
+                            <span><i class="fas fa-comment"></i> 2,156 posts</span>
+                            <span><i class="fas fa-eye"></i> 45,789 views</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <!-- Company Info -->
+                    <div class="footer-column">
+                        <div class="footer-logo">
+                            <div class="logo-icon">FMP</div>
+                            <div class="logo-text">
+                                <span class="logo-main">ForexMaster Pro</span>
+                            </div>
+                        </div>
+                        <p class="footer-description">
+                            The ultimate trading ecosystem with 5000+ resources and 50,000+ community members.
+                        </p>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="footer-column">
+                        <h4 class="footer-title">Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                            <li><a href="dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                            <li><a href="education.html"><i class="fas fa-graduation-cap"></i> Education Hub</a></li>
+                            <li><a href="community.html"><i class="fas fa-users"></i> Community Forum</a></li>
+                            <li><a href="signals.html"><i class="fas fa-brain"></i> AI Signals</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Resources -->
+                    <div class="footer-column">
+                        <h4 class="footer-title">Resources</h4>
+                        <ul class="footer-links">
+                            <li><a href="tools.html"><i class="fas fa-tools"></i> Trading Tools</a></li>
+                            <li><a href="research.html"><i class="fas fa-chart-bar"></i> Market Research</a></li>
+                            <li><a href="blog.html"><i class="fas fa-blog"></i> Trading Blog</a></li>
+                            <li><a href="support/mobile-apps.html"><i class="fas fa-mobile-alt"></i> Mobile Apps</a></li>
+                            <li><a href="support/ebooks.html"><i class="fas fa-book"></i> Ebooks & Guides</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Support -->
+                    <div class="footer-column">
+                        <h4 class="footer-title">Support</h4>
+                        <ul class="footer-links">
+                            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+                            <li><a href="support/live-chat.html"><i class="fas fa-comments"></i> Live Chat</a></li>
+                            <li><a href="support/help-center.html"><i class="fas fa-question-circle"></i> Help Center</a></li>
+                            <li><a href="support/bug-reports.html"><i class="fas fa-bug"></i> Bug Reports</a></li>
+                            <li><a href="support/feature-requests.html"><i class="fas fa-lightbulb"></i> Feature Requests</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 ForexMaster Pro. All rights reserved. | 5000+ Resources | 50,000+ Members | 15,247+ Posts</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../content-generator.js"></script>
+    <script src="../script.js"></script>
+    <script>
+        // Load dynamic forum content
+        document.addEventListener('DOMContentLoaded', function() {
+            loadForumContent();
+            setupForumFilters();
+        });
+        
+        function loadForumContent(category = 'all', limit = 50) {
+            const topics = contentGenerator.getForumTopicsByCategory(category, limit);
+            const container = document.querySelector('.content-list');
+            
+            if (container) {
+                container.innerHTML = topics.map(topic => `
+                    <div class="forum-thread">
+                        <div class="thread-header">
+                            <div class="thread-avatar">${topic.author.split(' ').map(n => n[0]).join('')}</div>
+                            <div class="thread-info">
+                                <h4>${topic.title}</h4>
+                                <div class="thread-meta">
+                                    <span>Posted by <strong>${topic.author}</strong></span>
+                                    <span>•</span>
+                                    <span>${topic.timeAgo}</span>
+                                    <span>•</span>
+                                    <span>${topic.category}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="thread-content">
+                            ${topic.content}
+                        </div>
+                        <div class="thread-stats">
+                            <span><i class="fas fa-thumbs-up"></i> ${topic.likes} likes</span>
+                            <span><i class="fas fa-comment"></i> ${topic.replies} replies</span>
+                            <span><i class="fas fa-eye"></i> ${topic.views} views</span>
+                            <span><i class="fas fa-clock"></i> Last reply ${topic.timeAgo}</span>
+                        </div>
+                        <div class="thread-tags">
+                            ${topic.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                        </div>
+                    </div>
+                `).join('');
+                
+                // Update stats
+                updateForumStats(topics.length);
+            }
+        }
+        
+        function setupForumFilters() {
+            // Add category filter buttons
+            const categoriesSection = document.querySelector('.forum-categories');
+            if (categoriesSection) {
+                const categories = ['all', 'Technical Analysis', 'Fundamental Analysis', 'Trading Psychology', 
+                                 'Risk Management', 'Forex Trading', 'Cryptocurrency', 'Day Trading'];
+                
+                categoriesSection.innerHTML = categories.map(cat => `
+                    <button class="category-btn ${cat === 'all' ? 'active' : ''}" 
+                            onclick="filterByCategory('${cat}')">
+                        ${cat === 'all' ? 'All Topics' : cat}
+                    </button>
+                `).join('');
+            }
+        }
+        
+        function filterByCategory(category) {
+            // Update active button
+            document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Load filtered content
+            loadForumContent(category, 50);
+        }
+        
+        function updateForumStats(topicCount) {
+            // Update the stats in the header
+            const statsElements = document.querySelectorAll('.stat-number');
+            if (statsElements.length >= 2) {
+                statsElements[1].textContent = contentGenerator.forumTopics.length.toLocaleString() + '+';
+            }
+        }
+        
+        function searchForum() {
+            const query = document.getElementById('forumSearch')?.value;
+            if (query) {
+                const results = contentGenerator.searchContent(query, 'forum');
+                displaySearchResults(results);
+            }
+        }
+        
+        function displaySearchResults(results) {
+            const container = document.querySelector('.content-list');
+            if (container && results.length > 0) {
+                container.innerHTML = results.map(topic => `
+                    <div class="forum-thread search-result">
+                        <div class="thread-header">
+                            <div class="thread-avatar">${topic.author.split(' ').map(n => n[0]).join('')}</div>
+                            <div class="thread-info">
+                                <h4>${topic.title}</h4>
+                                <div class="thread-meta">
+                                    <span>Posted by <strong>${topic.author}</strong></span>
+                                    <span>•</span>
+                                    <span>${topic.timeAgo}</span>
+                                    <span>•</span>
+                                    <span>${topic.category}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="thread-content">
+                            ${topic.content}
+                        </div>
+                        <div class="thread-stats">
+                            <span><i class="fas fa-thumbs-up"></i> ${topic.likes} likes</span>
+                            <span><i class="fas fa-comment"></i> ${topic.replies} replies</span>
+                            <span><i class="fas fa-eye"></i> ${topic.views} views</span>
+                        </div>
+                    </div>
+                `).join('');
+            } else if (results.length === 0) {
+                container.innerHTML = '<div class="no-results">No topics found matching your search.</div>';
+            }
+        }
+    </script>
+</body>
+</html>

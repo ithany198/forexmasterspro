@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Research - ForexMaster Pro</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../pages-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <div class="logo-icon">FMP</div>
+                    <div class="logo-text">
+                        <span class="logo-main">ForexMaster</span>
+                        <span class="logo-sub">Pro</span>
+                    </div>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="../index.html" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a></li>
+                    <li class="nav-item"><a href="dashboard.html" class="nav-link"><i class="fas fa-chart-line"></i><span>Dashboard</span></a></li>
+                    <li class="nav-item"><a href="education.html" class="nav-link"><i class="fas fa-graduation-cap"></i><span>Education Hub</span></a></li>
+                    <li class="nav-item"><a href="community.html" class="nav-link"><i class="fas fa-users"></i><span>Community Forum</span></a></li>
+                    <li class="nav-item"><a href="signals.html" class="nav-link"><i class="fas fa-brain"></i><span>AI Signals</span></a></li>
+                    <li class="nav-item"><a href="tools.html" class="nav-link"><i class="fas fa-tools"></i><span>Trading Tools</span></a></li>
+                    <li class="nav-item"><a href="research.html" class="nav-link active"><i class="fas fa-chart-bar"></i><span>Research</span></a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link"><i class="fas fa-blog"></i><span>Blog</span></a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
+                </ul>
+                <div class="auth-buttons">
+                    <button class="btn btn-login" onclick="openLoginModal()"><i class="fas fa-sign-in-alt"></i>Login</button>
+                    <button class="btn btn-trading" onclick="openSignupModal()">Start Trading</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page-content">
+        <section class="page-header">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <span><i class="fas fa-chevron-right"></i></span>
+                    <span>Market Research</span>
+                </div>
+                <h1 class="page-title"><i class="fas fa-chart-bar"></i>Market Research</h1>
+                <p class="page-subtitle">Professional market analysis, research reports, and economic insights</p>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="content-grid">
+                <!-- Research Report 1 -->
+                <div class="content-card">
+                    <div class="card-icon"><i class="fas fa-file-alt"></i></div>
+                    <h3 class="card-title">Weekly Forex Market Outlook</h3>
+                    <p class="card-description">Comprehensive analysis of major currency pairs with key levels and trade setups for the week ahead...</p>
+                    <div class="card-meta">
+                        <span><i class="fas fa-calendar"></i> March 15, 2024</span>
+                        <span><i class="fas fa-download"></i> 2,847 downloads</span>
+                    </div>
+                    <div class="card-action"><a href="research/weekly-forex-outlook.html" class="btn-card">View Report <i class="fas fa-arrow-right"></i></a></div>
+                </div>
+
+                <!-- Research Report 2 -->
+                <div class="content-card">
+                    <div class="card-icon"><i class="fas fa-globe"></i></div>
+                    <h3 class="card-title">Global Economic Indicators Dashboard</h3>
+                    <p class="card-description">Real-time tracking of key economic indicators from major economies with impact analysis...</p>
+                    <div class="card-meta">
+                        <span><i class="fas fa-sync"></i> Live Data</span>
+                        <span><i class="fas fa-eye"></i> 5,234 views</span>
+                    </div>
+                    <div class="card-action"><a href="research/economic-indicators.html" class="btn-card">View Dashboard <i class="fas fa-arrow-right"></i></a></div>
+                </div>
+
+                <!-- Add 10+ more research reports -->
+                <div class="content-card">
+                    <div class="card-icon"><i class="fab fa-bitcoin"></i></div>
+                    <h3 class="card-title">Cryptocurrency Market Analysis</h3>
+                    <p class="card-description">In-depth analysis of Bitcoin, Ethereum, and altcoin markets with on-chain metrics...</p>
+                    <div class="card-meta">
+                        <span><i class="fas fa-calendar"></i> Daily Update</span>
+                        <span><i class="fas fa-download"></i> 3,456 downloads</span>
+                    </div>
+                    <div class="card-action"><a href="research/crypto-analysis.html" class="btn-card">View Analysis <i class="fas fa-arrow-right"></i></a></div>
+                </div>
+
+                <div class="content-card">
+                    <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3 class="card-title">Stock Market Sector Rotation Report</h3>
+                    <p class="card-description">Analysis of sector performance and rotation patterns with investment opportunities...</p>
+                    <div class="card-meta">
+                        <span><i class="fas fa-calendar"></i> March 12, 2024</span>
+                        <span><i class="fas fa-download"></i> 1,892 downloads</span>
+                    </div>
+                    <div class="card-action"><a href="research/sector-rotation.html" class="btn-card">View Report <i class="fas fa-arrow-right"></i></a></div>
+                </div>
+
+                <div class="content-card">
+                    <div class="card-icon"><i class="fas fa-coins"></i></div>
+                    <h3 class="card-title">Commodities Market Report</h3>
+                    <p class="card-description">Gold, oil, and agricultural commodities analysis with supply-demand fundamentals...</p>
+                    <div class="card-meta">
+                        <span><i class="fas fa-calendar"></i> March 10, 2024</span>
+                        <span><i class="fas fa-download"></i> 2,134 downloads</span>
+                    </div>
+                    <div class="card-action"><a href="research/commodities-report.html" class="btn-card">View Report <i class="fas fa-arrow-right"></i></a></div>
+                </div>
+
+                <!-- Continue with more research content to reach 10+ items -->
+                <div class="content-card">
+                    <div class="card-icon"><i class="fas fa-university"></i></div>
+                    <h3 class="card-title">Central Bank Policy Tracker</h3>
+                    <p class="card-description">Monitoring Federal Reserve, ECB, BOJ, and other major central bank policies...</p>
+                    <div class="card-meta">
+                        <span><i class="fas fa-sync"></i> Real-time</span>
+                        <span><i class="fas fa-eye"></i> 4,567 views</span>
+                    </div>
+                    <div class="card-action"><a href="research/central-bank-tracker.html" class="btn-card">View Tracker <i class="fas fa-arrow-right"></i></a></div>
+                </div>
+
+                <!-- Add more research reports... -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-column">
+                        <div class="footer-logo">
+                            <div class="logo-icon">FMP</div>
+                            <div class="logo-text"><span class="logo-main">ForexMaster Pro</span></div>
+                        </div>
+                        <p class="footer-description">The ultimate trading ecosystem with 5000+ resources and 50,000+ community members.</p>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title">Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                            <li><a href="dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                            <li><a href="education.html"><i class="fas fa-graduation-cap"></i> Education Hub</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title">Resources</h4>
+                        <ul class="footer-links">
+                            <li><a href="tools.html"><i class="fas fa-tools"></i> Trading Tools</a></li>
+                            <li><a href="research.html"><i class="fas fa-chart-bar"></i> Market Research</a></li>
+                            <li><a href="blog.html"><i class="fas fa-blog"></i> Trading Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title">Support</h4>
+                        <ul class="footer-links">
+                            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+                            <li><a href="support/live-chat.html"><i class="fas fa-comments"></i> Live Chat</a></li>
+                            <li><a href="support/help-center.html"><i class="fas fa-question-circle"></i> Help Center</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 ForexMaster Pro. All rights reserved. | 5000+ Resources | 50,000+ Members | 15,247+ Posts</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Hub - ForexMaster Pro</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../pages-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo -->
+                <div class="logo">
+                    <div class="logo-icon">FMP</div>
+                    <div class="logo-text">
+                        <span class="logo-main">ForexMaster</span>
+                        <span class="logo-sub">Pro</span>
+                    </div>
+                </div>
+
+                <!-- Navigation Menu -->
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="../index.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-link">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="education.html" class="nav-link active">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Education Hub</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="community.html" class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Community Forum</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="signals.html" class="nav-link">
+                            <i class="fas fa-brain"></i>
+                            <span>AI Signals</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="tools.html" class="nav-link">
+                            <i class="fas fa-tools"></i>
+                            <span>Trading Tools</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="research.html" class="nav-link">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Research</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="blog.html" class="nav-link">
+                            <i class="fas fa-blog"></i>
+                            <span>Blog</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Auth Buttons -->
+                <div class="auth-buttons">
+                    <button class="btn btn-login" onclick="openLoginModal()">
+                        <i class="fas fa-sign-in-alt"></i>
+                        Login
+                    </button>
+                    <button class="btn btn-trading" onclick="openSignupModal()">
+                        Start Trading
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Content -->
+    <main class="page-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <span><i class="fas fa-chevron-right"></i></span>
+                    <span>Education Hub</span>
+                </div>
+                <h1 class="page-title">
+                    <i class="fas fa-graduation-cap"></i>
+                    Education Hub
+                </h1>
+                <p class="page-subtitle">
+                    Master trading with our comprehensive library of 5000+ courses, tutorials, and learning resources
+                </p>
+            </div>
+        </section>
+
+        <!-- Education Stats -->
+        <section class="container">
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-number">5,247</div>
+                    <div class="stat-label">Total Courses</div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i> +125 this month
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">89,234</div>
+                    <div class="stat-label">Active Students</div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i> +2,847 this week
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1,847</div>
+                    <div class="stat-label">Expert Instructors</div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i> +47 verified
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Live Support</div>
+                    <div class="stat-change neutral">
+                        <i class="fas fa-clock"></i> Always available
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Courses -->
+        <section class="container">
+            <div class="content-grid">
+                <!-- Course 1: Forex Fundamentals -->
+                <div class="course-card">
+                    <div class="course-image">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-level">Beginner</div>
+                        <h3 class="course-title">Forex Trading Fundamentals</h3>
+                        <p class="course-description">
+                            Master the basics of forex trading including currency pairs, market structure, and fundamental analysis. Perfect for beginners starting their trading journey.
+                        </p>
+                        <div class="course-stats">
+                            <span><i class="fas fa-clock"></i> 12 hours</span>
+                            <span><i class="fas fa-users"></i> 8,247 students</span>
+                            <span><i class="fas fa-star"></i> 4.9/5</span>
+                        </div>
+                        <div class="card-action">
+                            <a href="education/forex-fundamentals.html" class="btn-card">
+                                Start Course <i class="fas fa-play"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 2: Technical Analysis Mastery -->
+                <div class="course-card">
+                    <div class="course-image">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-level">Intermediate</div>
+                        <h3 class="course-title">Technical Analysis Mastery</h3>
+                        <p class="course-description">
+                            Advanced technical analysis techniques including chart patterns, indicators, and price action strategies used by professional traders.
+                        </p>
+                        <div class="course-stats">
+                            <span><i class="fas fa-clock"></i> 18 hours</span>
+                            <span><i class="fas fa-users"></i> 12,567 students</span>
+                            <span><i class="fas fa-star"></i> 4.8/5</span>
+                        </div>
+                        <div class="card-action">
+                            <a href="education/technical-analysis.html" class="btn-card">
+                                Start Course <i class="fas fa-play"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 3: Risk Management -->
+                <div class="course-card">
+                    <div class="course-image">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-level">Advanced</div>
+                        <h3 class="course-title">Risk Management & Psychology</h3>
+                        <p class="course-description">
+                            Learn professional risk management techniques and trading psychology to protect your capital and maintain consistent profitability.
+                        </p>
+                        <div class="course-stats">
+                            <span><i class="fas fa-clock"></i> 15 hours</span>
+                            <span><i class="fas fa-users"></i> 9,847 students</span>
+                            <span><i class="fas fa-star"></i> 4.9/5</span>
+                        </div>
+                        <div class="card-action">
+                            <a href="education/risk-management.html" class="btn-card">
+                                Start Course <i class="fas fa-play"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 4: Algorithmic Trading -->
+                <div class="course-card">
+                    <div class="course-image">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-level">Expert</div>
+                        <h3 class="course-title">Algorithmic Trading with Python</h3>
+                        <p class="course-description">
+                            Build automated trading systems using Python, machine learning, and quantitative strategies for systematic trading.
+                        </p>
+                        <div class="course-stats">
+                            <span><i class="fas fa-clock"></i> 25 hours</span>
+                            <span><i class="fas fa-users"></i> 5,234 students</span>
+                            <span><i class="fas fa-star"></i> 4.7/5</span>
+                        </div>
+                        <div class="card-action">
+                            <a href="education/algorithmic-trading.html" class="btn-card">
+                                Start Course <i class="fas fa-play"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 5: Cryptocurrency Trading -->
+                <div class="course-card">
+                    <div class="course-image">
+                        <i class="fab fa-bitcoin"></i>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-level">Intermediate</div>
+                        <h3 class="course-title">Cryptocurrency Trading Strategies</h3>
+                        <p class="course-description">
+                            Navigate the crypto markets with confidence using specialized strategies for digital assets and DeFi protocols.
+                        </p>
+                        <div class="course-stats">
+                            <span><i class="fas fa-clock"></i> 14 hours</span>
+                            <span><i class="fas fa-users"></i> 11,892 students</span>
+                            <span><i class="fas fa-star"></i> 4.8/5</span>
+                        </div>
+                        <div class="card-action">
+                            <a href="education/crypto-trading.html" class="btn-card">
+                                Start Course <i class="fas fa-play"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 6: Options Trading -->
+                <div class="course-card">
+                    <div class="course-image">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-level">Advanced</div>
+                        <h3 class="course-title">Options Trading Strategies</h3>
+                        <p class="course-description">
+                            Master options trading with comprehensive coverage of strategies, Greeks, and advanced hedging techniques.
+                        </p>
+                        <div class="course-stats">
+                            <span><i class="fas fa-clock"></i> 20 hours</span>
+                            <span><i class="fas fa-users"></i> 7,456 students</span>
+                            <span><i class="fas fa-star"></i> 4.9/5</span>
+                        </div>
+                        <div class="card-action">
+                            <a href="education/options-trading.html" class="btn-card">
+                                Start Course <i class="fas fa-play"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 7: Day Trading Bootcamp -->
+                <div class="course-card">
+                    <div class="course-image">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-level">Intermediate</div>
+                        <h3 class="course-title">Day Trading Bootcamp</h3>
+                        <p class="course-description">
+                            Intensive day trading course covering scalping, momentum trading, and intraday strategies for active traders.
+                        </p>
+                        <div class="course-stats">
+                            <span><i class="fas fa-clock"></i> 16 hours</span>
+                            <span><i class="fas fa-users"></i> 13,567 students</span>
+                            <span><i class="fas fa-star"></i> 4.8/5</span>
+                        </div>
+                        <div class="card-action">
+                            <a href="education/day-trading.html" class="btn-card">
+                                Start Course <i class="fas fa-play"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 8: Swing Trading Mastery -->
+                <div class="course-card">
+                    <div class="course-image">
+                        <i class="fas fa-trending-up"></i>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-level">Beginner</div>
+                        <h3 class="course-title">Swing Trading Mastery</h3>
+                        <p class="course-description">
+                            Learn swing trading strategies for capturing medium-term price movements with optimal risk-reward ratios.
+                        </p>
+                        <div class="course-stats">
+                            <span><i class="fas fa-clock"></i> 13 hours</span>
+                            <span><i class="fas fa-users"></i> 10,234 students</span>
+                            <span><i class="fas fa-star"></i> 4.7/5</span>
+                        </div>
+                        <div class="card-action">
+                            <a href="education/swing-trading.html" class="btn-card">
+                                Start Course <i class="fas fa-play"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 9: Market Psychology -->
+                <div class="course-card">
+                    <div class="course-image">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-level">Advanced</div>
+                        <h3 class="course-title">Market Psychology & Sentiment</h3>
+                        <p class="course-description">
+                            Understand market psychology, crowd behavior, and sentiment analysis to gain an edge in your trading decisions.
+                        </p>
+                        <div class="course-stats">
+                            <span><i class="fas fa-clock"></i> 11 hours</span>
+                            <span><i class="fas fa-users"></i> 6,789 students</span>
+                            <span><i class="fas fa-star"></i> 4.9/5</span>
+                        </div>
+                        <div class="card-action">
+                            <a href="education/market-psychology.html" class="btn-card">
+                                Start Course <i class="fas fa-play"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 10: Portfolio Management -->
+                <div class="course-card">
+                    <div class="course-image">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-level">Expert</div>
+                        <h3 class="course-title">Professional Portfolio Management</h3>
+                        <p class="course-description">
+                            Advanced portfolio construction, diversification strategies, and institutional-level risk management techniques.
+                        </p>
+                        <div class="course-stats">
+                            <span><i class="fas fa-clock"></i> 22 hours</span>
+                            <span><i class="fas fa-users"></i> 4,567 students</span>
+                            <span><i class="fas fa-star"></i> 4.8/5</span>
+                        </div>
+                        <div class="card-action">
+                            <a href="education/portfolio-management.html" class="btn-card">
+                                Start Course <i class="fas fa-play"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 11: Economic Analysis -->
+                <div class="course-card">
+                    <div class="course-image">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-level">Intermediate</div>
+                        <h3 class="course-title">Economic Analysis for Traders</h3>
+                        <p class="course-description">
+                            Master fundamental analysis including economic indicators, central bank policies, and macroeconomic trends.
+                        </p>
+                        <div class="course-stats">
+                            <span><i class="fas fa-clock"></i> 17 hours</span>
+                            <span><i class="fas fa-users"></i> 8,934 students</span>
+                            <span><i class="fas fa-star"></i> 4.7/5</span>
+                        </div>
+                        <div class="card-action">
+                            <a href="education/economic-analysis.html" class="btn-card">
+                                Start Course <i class="fas fa-play"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 12: Trading Platforms Mastery -->
+                <div class="course-card">
+                    <div class="course-image">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-level">Beginner</div>
+                        <h3 class="course-title">Trading Platforms Mastery</h3>
+                        <p class="course-description">
+                            Complete guide to using popular trading platforms including MetaTrader, TradingView, and proprietary platforms.
+                        </p>
+                        <div class="course-stats">
+                            <span><i class="fas fa-clock"></i> 9 hours</span>
+                            <span><i class="fas fa-users"></i> 15,678 students</span>
+                            <span><i class="fas fa-star"></i> 4.6/5</span>
+                        </div>
+                        <div class="card-action">
+                            <a href="education/trading-platforms.html" class="btn-card">
+                                Start Course <i class="fas fa-play"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning Paths -->
+        <section class="container">
+            <div class="chart-container">
+                <h3 class="chart-title">
+                    <i class="fas fa-route"></i>
+                    Recommended Learning Paths
+                </h3>
+                <div class="content-list">
+                    <div class="list-item">
+                        <div class="list-title">
+                            <i class="fas fa-seedling"></i>
+                            Complete Beginner Path
+                        </div>
+                        <div class="list-description">
+                            Start from zero with our beginner-friendly curriculum covering trading basics, risk management, and platform usage.
+                        </div>
+                        <div class="list-meta">
+                            <span><i class="fas fa-clock"></i> 45 hours</span>
+                            <span><i class="fas fa-graduation-cap"></i> 6 courses</span>
+                            <span><i class="fas fa-certificate"></i> Certificate included</span>
+                        </div>
+                    </div>
+
+                    <div class="list-item">
+                        <div class="list-title">
+                            <i class="fas fa-chart-line"></i>
+                            Technical Trader Path
+                        </div>
+                        <div class="list-description">
+                            Master technical analysis, chart patterns, and price action strategies for systematic trading approaches.
+                        </div>
+                        <div class="list-meta">
+                            <span><i class="fas fa-clock"></i> 67 hours</span>
+                            <span><i class="fas fa-graduation-cap"></i> 8 courses</span>
+                            <span><i class="fas fa-certificate"></i> Advanced certification</span>
+                        </div>
+                    </div>
+
+                    <div class="list-item">
+                        <div class="list-title">
+                            <i class="fas fa-robot"></i>
+                            Algorithmic Trader Path
+                        </div>
+                        <div class="list-description">
+                            Build automated trading systems using programming, backtesting, and quantitative analysis.
+                        </div>
+                        <div class="list-meta">
+                            <span><i class="fas fa-clock"></i> 89 hours</span>
+                            <span><i class="fas fa-graduation-cap"></i> 10 courses</span>
+                            <span><i class="fas fa-certificate"></i> Expert certification</span>
+                        </div>
+                    </div>
+
+                    <div class="list-item">
+                        <div class="list-title">
+                            <i class="fas fa-briefcase"></i>
+                            Professional Trader Path
+                        </div>
+                        <div class="list-description">
+                            Comprehensive program covering all aspects of professional trading including psychology and risk management.
+                        </div>
+                        <div class="list-meta">
+                            <span><i class="fas fa-clock"></i> 120 hours</span>
+                            <span><i class="fas fa-graduation-cap"></i> 15 courses</span>
+                            <span><i class="fas fa-certificate"></i> Professional certification</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <!-- Company Info -->
+                    <div class="footer-column">
+                        <div class="footer-logo">
+                            <div class="logo-icon">FMP</div>
+                            <div class="logo-text">
+                                <span class="logo-main">ForexMaster Pro</span>
+                            </div>
+                        </div>
+                        <p class="footer-description">
+                            The ultimate trading ecosystem with 5000+ resources and 50,000+ community members.
+                        </p>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="footer-column">
+                        <h4 class="footer-title">Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                            <li><a href="dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                            <li><a href="education.html"><i class="fas fa-graduation-cap"></i> Education Hub</a></li>
+                            <li><a href="community.html"><i class="fas fa-users"></i> Community Forum</a></li>
+                            <li><a href="signals.html"><i class="fas fa-brain"></i> AI Signals</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Resources -->
+                    <div class="footer-column">
+                        <h4 class="footer-title">Resources</h4>
+                        <ul class="footer-links">
+                            <li><a href="tools.html"><i class="fas fa-tools"></i> Trading Tools</a></li>
+                            <li><a href="research.html"><i class="fas fa-chart-bar"></i> Market Research</a></li>
+                            <li><a href="blog.html"><i class="fas fa-blog"></i> Trading Blog</a></li>
+                            <li><a href="support/mobile-apps.html"><i class="fas fa-mobile-alt"></i> Mobile Apps</a></li>
+                            <li><a href="support/ebooks.html"><i class="fas fa-book"></i> Ebooks & Guides</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Support -->
+                    <div class="footer-column">
+                        <h4 class="footer-title">Support</h4>
+                        <ul class="footer-links">
+                            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+                            <li><a href="support/live-chat.html"><i class="fas fa-comments"></i> Live Chat</a></li>
+                            <li><a href="support/help-center.html"><i class="fas fa-question-circle"></i> Help Center</a></li>
+                            <li><a href="support/bug-reports.html"><i class="fas fa-bug"></i> Bug Reports</a></li>
+                            <li><a href="support/feature-requests.html"><i class="fas fa-lightbulb"></i> Feature Requests</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 ForexMaster Pro. All rights reserved. | 5000+ Resources | 50,000+ Members | 15,247+ Posts</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
+

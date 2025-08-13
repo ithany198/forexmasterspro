@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Trading Chart - ForexMaster Pro</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../chart-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.14/ace.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.14/mode-javascript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.14/theme-monokai.js"></script>
+</head>
+<body class="chart-page">
+    <!-- Header -->
+    <header class="chart-header">
+        <div class="chart-nav">
+            <!-- Logo -->
+            <div class="chart-logo">
+                <div class="logo-icon">FMP</div>
+                <span class="logo-text">ForexMaster Pro</span>
+            </div>
+
+            <!-- Instrument Selector -->
+            <div class="instrument-selector">
+                <div class="current-instrument" onclick="toggleInstrumentDropdown()">
+                    <span class="symbol">AAPL</span>
+                    <span class="company">Apple Inc</span>
+                    <span class="exchange">NASDAQ</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div id="instrumentDropdown" class="instrument-dropdown">
+                    <div class="instrument-search">
+                        <input type="text" placeholder="Search symbols..." id="symbolSearch">
+                    </div>
+                    <div class="instrument-categories">
+                        <div class="category active" data-category="stocks">Stocks</div>
+                        <div class="category" data-category="forex">Forex</div>
+                        <div class="category" data-category="crypto">Crypto</div>
+                        <div class="category" data-category="commodities">Commodities</div>
+                    </div>
+                    <div class="instrument-list" id="instrumentList">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeframe Selector -->
+            <div class="timeframe-selector">
+                <div class="timeframe-btn active" data-timeframe="1m">1m</div>
+                <div class="timeframe-btn" data-timeframe="5m">5m</div>
+                <div class="timeframe-btn" data-timeframe="15m">15m</div>
+                <div class="timeframe-btn" data-timeframe="1h">1h</div>
+                <div class="timeframe-btn" data-timeframe="4h">4h</div>
+                <div class="timeframe-btn" data-timeframe="1d">1D</div>
+                <div class="timeframe-btn" data-timeframe="1w">1W</div>
+                <div class="timeframe-btn" data-timeframe="1M">1M</div>
+            </div>
+
+            <!-- Chart Controls -->
+            <div class="chart-controls">
+                <div class="control-group">
+                    <button class="control-btn" title="Save Chart" onclick="saveChart()">
+                        <i class="fas fa-save"></i>
+                    </button>
+                    <button class="control-btn" title="Load Chart" onclick="loadChart()">
+                        <i class="fas fa-folder-open"></i>
+                    </button>
+                    <button class="control-btn" title="Share Chart" onclick="shareChart()">
+                        <i class="fas fa-share"></i>
+                    </button>
+                    <button class="control-btn" title="Screenshot" onclick="takeScreenshot()">
+                        <i class="fas fa-camera"></i>
+                    </button>
+                </div>
+                <div class="control-group">
+                    <button class="control-btn" title="Fullscreen" onclick="toggleFullscreen()">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                    <button class="control-btn" title="Settings" onclick="openSettings()">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- User Menu -->
+            <div class="user-menu">
+                <button class="btn btn-primary" onclick="openSignupModal()">Start Trading</button>
+                <div class="user-avatar" onclick="toggleUserDropdown()">
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Chart Container -->
+    <div class="chart-container">
+        <!-- Left Sidebar - Tools -->
+        <div class="left-sidebar">
+            <!-- Drawing Tools -->
+            <div class="tool-section">
+                <div class="tool-header">
+                    <i class="fas fa-pencil-alt"></i>
+                    <span>Drawing Tools</span>
+                </div>
+                <div class="tool-grid">
+                    <div class="tool-btn active" data-tool="cursor" title="Cursor">
+                        <i class="fas fa-mouse-pointer"></i>
+                    </div>
+                    <div class="tool-btn" data-tool="line" title="Trend Line">
+                        <i class="fas fa-minus"></i>
+                    </div>
+                    <div class="tool-btn" data-tool="horizontal" title="Horizontal Line">
+                        <i class="fas fa-grip-lines"></i>
+                    </div>
+                    <div class="tool-btn" data-tool="vertical" title="Vertical Line">
+                        <i class="fas fa-grip-lines-vertical"></i>
+                    </div>
+                    <div class="tool-btn" data-tool="rectangle" title="Rectangle">
+                        <i class="fas fa-square"></i>
+                    </div>
+                    <div class="tool-btn" data-tool="circle" title="Circle">
+                        <i class="fas fa-circle"></i>
+                    </div>
+                    <div class="tool-btn" data-tool="triangle" title="Triangle">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="tool-btn" data-tool="polygon" title="Polygon">
+                        <i class="fas fa-draw-polygon"></i>
+                    </div>
+                    <div class="tool-btn" data-tool="fib" title="Fibonacci">
+                        <i class="fas fa-wave-square"></i>
+                    </div>
+                    <div class="tool-btn" data-tool="pitchfork" title="Pitchfork">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <div class="tool-btn" data-tool="gann" title="Gann Fan">
+                        <i class="fas fa-fan"></i>
+                    </div>
+                    <div class="tool-btn" data-tool="channel" title="Channel">
+                        <i class="fas fa-columns"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chart Types -->
+            <div class="tool-section">
+                <div class="tool-header">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Chart Types</span>
+                </div>
+                <div class="chart-types">
+                    <div class="chart-type-btn active" data-type="candlestick" title="Candlestick">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="chart-type-btn" data-type="line" title="Line">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="chart-type-btn" data-type="area" title="Area">
+                        <i class="fas fa-chart-area"></i>
+                    </div>
+                    <div class="chart-type-btn" data-type="ohlc" title="OHLC Bars">
+                        <i class="fas fa-align-left"></i>
+                    </div>
+                    <div class="chart-type-btn" data-type="heikin" title="Heikin Ashi">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="chart-type-btn" data-type="renko" title="Renko">
+                        <i class="fas fa-th-large"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Volume Profile -->
+            <div class="tool-section">
+                <div class="tool-header">
+                    <i class="fas fa-volume-up"></i>
+                    <span>Volume</span>
+                </div>
+                <div class="volume-controls">
+                    <button class="volume-btn" onclick="toggleVolume()">
+                        <i class="fas fa-volume-up"></i>
+                        <span>Volume Bars</span>
+                    </button>
+                    <button class="volume-btn" onclick="toggleVolumeProfile()">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Volume Profile</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Order Tools -->
+            <div class="tool-section">
+                <div class="tool-header">
+                    <i class="fas fa-exchange-alt"></i>
+                    <span>Trading</span>
+                </div>
+                <div class="order-tools">
+                    <button class="order-btn buy" onclick="placeBuyOrder()">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>Buy</span>
+                    </button>
+                    <button class="order-btn sell" onclick="placeSellOrder()">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>Sell</span>
+                    </button>
+                    <button class="order-btn" onclick="openOrderPanel()">
+                        <i class="fas fa-list"></i>
+                        <span>Orders</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chart Area -->
+        <div class="chart-main">
+            <!-- Price Info Bar -->
+            <div class="price-info-bar">
+                <div class="price-data">
+                    <span class="price-label">O</span>
+                    <span class="price-value" id="openPrice">209.93</span>
+                    <span class="price-label">H</span>
+                    <span class="price-value high" id="highPrice">210.91</span>
+                    <span class="price-label">L</span>
+                    <span class="price-value low" id="lowPrice">207.54</span>
+                    <span class="price-label">C</span>
+                    <span class="price-value close" id="closePrice">208.62</span>
+                    <span class="price-change negative" id="priceChange">-2.54 (-1.20%)</span>
+                </div>
+                <div class="volume-data">
+                    <span class="volume-label">Vol</span>
+                    <span class="volume-value" id="volumeValue">38.84M</span>
+                </div>
+            </div>
+
+            <!-- Chart Canvas -->
+            <div id="chartContainer" class="chart-canvas"></div>
+
+            <!-- Bottom Panel Tabs -->
+            <div class="bottom-panel">
+                <div class="panel-tabs">
+                    <div class="panel-tab active" data-panel="indicators">Indicators</div>
+                    <div class="panel-tab" data-panel="strategies">Strategies</div>
+                    <div class="panel-tab" data-panel="alerts">Alerts</div>
+                    <div class="panel-tab" data-panel="orders">Orders</div>
+                    <div class="panel-tab" data-panel="editor">Pine Editor</div>
+                </div>
+                <div class="panel-content" id="panelContent">
+                    <!-- Content populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Sidebar - Indicators & Watchlist -->
+        <div class="right-sidebar">
+            <!-- Indicators Panel -->
+            <div class="sidebar-section">
+                <div class="sidebar-header">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Indicators</span>
+                    <button class="add-btn" onclick="openIndicatorLibrary()">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <div class="indicators-list" id="indicatorsList">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Watchlist -->
+            <div class="sidebar-section">
+                <div class="sidebar-header">
+                    <i class="fas fa-list"></i>
+                    <span>Watchlist</span>
+                    <button class="add-btn" onclick="addToWatchlist()">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <div class="watchlist" id="watchlist">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Market Data -->
+            <div class="sidebar-section">
+                <div class="sidebar-header">
+                    <i class="fas fa-globe"></i>
+                    <span>Market Overview</span>
+                </div>
+                <div class="market-data" id="marketData">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <!-- Indicator Library Modal -->
+    <div id="indicatorModal" class="modal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h2>Indicator Library</h2>
+                <span class="close" onclick="closeModal('indicatorModal')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="indicator-search">
+                    <input type="text" placeholder="Search indicators..." id="indicatorSearch">
+                    <div class="indicator-categories">
+                        <div class="category active" data-category="all">All</div>
+                        <div class="category" data-category="trend">Trend</div>
+                        <div class="category" data-category="momentum">Momentum</div>
+                        <div class="category" data-category="volatility">Volatility</div>
+                        <div class="category" data-category="volume">Volume</div>
+                        <div class="category" data-category="oscillators">Oscillators</div>
+                        <div class="category" data-category="custom">Custom</div>
+                    </div>
+                </div>
+                <div class="indicator-grid" id="indicatorGrid">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pine Script Editor Modal -->
+    <div id="pineEditorModal" class="modal">
+        <div class="modal-content fullscreen">
+            <div class="modal-header">
+                <h2>Pine Script Editor</h2>
+                <div class="editor-controls">
+                    <button class="btn btn-primary" onclick="compilePineScript()">Compile</button>
+                    <button class="btn btn-secondary" onclick="savePineScript()">Save</button>
+                    <button class="btn btn-secondary" onclick="loadPineScript()">Load</button>
+                    <button class="btn btn-secondary" onclick="sharePineScript()">Share</button>
+                </div>
+                <span class="close" onclick="closeModal('pineEditorModal')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="editor-layout">
+                    <div class="editor-sidebar">
+                        <div class="editor-section">
+                            <h4>Built-in Functions</h4>
+                            <div class="function-list" id="functionList">
+                                <!-- Populated by JavaScript -->
+                            </div>
+                        </div>
+                        <div class="editor-section">
+                            <h4>Examples</h4>
+                            <div class="example-list" id="exampleList">
+                                <!-- Populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="editor-main">
+                        <div class="editor-tabs">
+                            <div class="editor-tab active">Custom Indicator</div>
+                        </div>
+                        <div id="pineEditor" class="pine-editor"></div>
+                        <div class="editor-output">
+                            <div class="output-tabs">
+                                <div class="output-tab active" data-tab="console">Console</div>
+                                <div class="output-tab" data-tab="errors">Errors</div>
+                                <div class="output-tab" data-tab="help">Help</div>
+                            </div>
+                            <div class="output-content" id="editorOutput"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Strategy Tester Modal -->
+    <div id="strategyModal" class="modal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h2>Strategy Tester</h2>
+                <span class="close" onclick="closeModal('strategyModal')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="strategy-content">
+                    <div class="strategy-settings">
+                        <h4>Backtest Settings</h4>
+                        <div class="settings-grid">
+                            <div class="setting-group">
+                                <label>Initial Capital</label>
+                                <input type="number" value="10000" id="initialCapital">
+                            </div>
+                            <div class="setting-group">
+                                <label>Commission</label>
+                                <input type="number" value="0.1" step="0.01" id="commission">
+                            </div>
+                            <div class="setting-group">
+                                <label>From Date</label>
+                                <input type="date" id="fromDate">
+                            </div>
+                            <div class="setting-group">
+                                <label>To Date</label>
+                                <input type="date" id="toDate">
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" onclick="runBacktest()">Run Backtest</button>
+                    </div>
+                    <div class="strategy-results" id="strategyResults">
+                        <!-- Populated after backtest -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include all necessary scripts -->
+    <script src="../seo-optimization.js"></script>
+    <script src="../social-share.js"></script>
+    <script src="../website-enhancer.js"></script>
+    <script src="../chart-engine.js"></script>
+    <script src="../indicators.js"></script>
+    <script src="../pine-script.js"></script>
+    <script src="../trading-engine.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>
